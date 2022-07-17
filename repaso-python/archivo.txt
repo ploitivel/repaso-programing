@@ -1,0 +1,8 @@
+Manzana,10,10
+Durazno,10,10
+Platano,10,10
+Cirielo,10,10
+Fresa,10,10"
+Manzana3,10,10
+Manzana3,10,10
+Manzana3,10,10
