@@ -1,4 +1,7 @@
 #nombre = input("Cual es tu nombre? :")
+from pdb import Restart
+
+
 nombre = "Matias"
 altura = input("Escribe tu altura :")
 #Espera la entrada
@@ -12,6 +15,5 @@ elif int(altura) < 170 and int(altura) > 160 :
 else:
     print(nombre+" Eres bajito") 
 
-#or and not
-
 #Condiciones anidadas son condiciones dentro de una condicion
+#En python no existe el switch
