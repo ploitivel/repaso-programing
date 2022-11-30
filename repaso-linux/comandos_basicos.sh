@@ -73,6 +73,15 @@ mv directorio directorio_renombrado
 #EEjemplo si queremos renombrar el directorio img a images lo haríamos así:
 mv img images
 
+#-------------------------------------------------------------------------#
+#--------------------Comparar la diferencia que existe en un  directorio o un archivo------------------#
+#-------------------------------------------------------------------------#
+Donde la opción -rq indica que comparemos recursivamente (r) y sólo los archivos diferentes (q). 
+Por ejemplo, si tenemos dos carpetas, una con un archivo más que la otra, con este comando nos lo indicará
+diff -rq carpeta1 carpeta2
+diff Archivo1 Archivo2
+
+
 
 #-------------------------------------------------------------------------#
 #-------------Bloquear Futuras ACtualizaciones DE UN PROGRAMA-------------#
@@ -216,6 +225,9 @@ kazam-team/stable-series/
 and471/kazam-daily-stable/
 
 
+
+Actualizar kali Linux
+apt-get update && apt-get full-upgrade
 
 
 
