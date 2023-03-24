@@ -319,3 +319,44 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O | sudo apt-key ad
 🔹 Añadir repositorios a lista de recursos Kali:
 
 echo "deb [arch=amd64] http://download.virtualbox.org/virtua... buster contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+
+
+
+
+
+#-------------------------------------------------------------------------#
+#----------------------Programas o procesos usando los puertos-------------------------------#
+#-------------------------------------------------------------------------#
+
+#FROMA1
+netstat -tulpn | grep :80   #Veremos el servicio que está enlazado al puerto 80 del interfaz de red.
+> netstat -nepal|grep 8080
+sudo netstat -tupln #le mostrará el PID (2472).
+
+#FORMA 2
+lsof -i :25 |grep LISTEN #lsof (List Open Files) para obtener una lista de los ficheros abiertos del equipo. Obtenemos el proceso asociado al puerto 25.
+
+#FORMA 3
+#El comando ss es la versión moderna del comando netstat.
+ss -lptn 'sport = :25'
+#Obtenemos el proceso asociado al puerto 25.
+
+
+#################################################################
+#########Matando procesos de puertos abiertos en Linux############3
+################################################################
+
+#FROMA 1
+#Visualizar los procesos: $ sudo ps -fA | grep python
+#Matando el proceso requerido: $ sudo kill -15 PID    "O"   $ sudo kill -9 PID
+$ sudo kill -9 4536
+#Esto es un ejemplo para matar el proceso de una app que dejó abierto un puerto UDP, y que con el primer comando se identificó su número de proceso 4536
+
+#FROMA 2
+
+#lista todos los puertos de escucha:
+netstat -antu
+
+#Toma el correspondiente, digamos 80 y mátalo usando esto:
+kill -9 $( lsof -i:80 -t )
+
